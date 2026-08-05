@@ -1,0 +1,72 @@
+document.addEventListener("DOMContentLoaded", () => {
+    
+    // Rotating Header Text Logic
+    const messages = [
+        "Book Your Private Consultation",
+        "Experience True Bespoke Elegance",
+        "Crafted Exclusively For Your Silhouette"
+    ];
+
+    const textElement = document.getElementById("rotating-text");
+    let currentIndex = 0;
+
+    setInterval(() => {
+        if (!textElement) return;
+        textElement.classList.add("fade");
+
+        setTimeout(() => {
+            currentIndex = (currentIndex + 1) % messages.length;
+            textElement.textContent = messages[currentIndex];
+            textElement.classList.remove("fade");
+        }, 800); 
+
+    }, 5000);
+
+    // ==========================================
+    // LUXURY TIMING FOR THE MORPH INTERACTION
+    // ==========================================
+    const menuToggleBtn = document.getElementById('menuToggleBtn');
+    const navDrawer = document.getElementById('navDrawer');
+    const navOverlay = document.getElementById('navDrawerOverlay');
+    const closeBtn = document.getElementById('closeNavBtn');
+
+    let isMenuAnimating = false;
+
+    function openMenuSequence() {
+        if (isMenuAnimating) return;
+        isMenuAnimating = true;
+
+        menuToggleBtn.classList.add('morph-active');
+
+        setTimeout(() => {
+            navDrawer.classList.add('active');
+            navOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden'; 
+            
+            setTimeout(() => {
+                isMenuAnimating = false;
+            }, 1000); 
+        }, 750); 
+    }
+
+    function closeMenuSequence() {
+        if (isMenuAnimating) return;
+        isMenuAnimating = true;
+
+        navDrawer.classList.remove('active');
+        navOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+
+        setTimeout(() => {
+            menuToggleBtn.classList.remove('morph-active');
+            
+            setTimeout(() => {
+                isMenuAnimating = false;
+            }, 600);
+        }, 800); 
+    }
+
+    if (menuToggleBtn) menuToggleBtn.addEventListener('click', openMenuSequence);
+    if (closeBtn) closeBtn.addEventListener('click', closeMenuSequence);
+    if (navOverlay) navOverlay.addEventListener('click', closeMenuSequence);
+});
