@@ -123,7 +123,8 @@ body {
 /* --- Hero Section --- */
 .hero-section {
     display: flex;
-    height: calc(100vh - 35px);
+    /* ЕДИНСТВЕНА ПРОМЕНА: од 35px на 28px за да го пополни екранот целосно и да го скрие футерот */
+    height: calc(100vh - 28px);
     width: 100%;
 }
 
@@ -294,7 +295,6 @@ body {
     background-color: #eee;
 }
 
-
 /* Footer */
 .drawer-footer { text-align: center; }
 .drawer-brand-logo { font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 300; letter-spacing: 8px; color: #111111; text-transform: uppercase; }
@@ -381,5 +381,181 @@ body {
 
     .nav-drawer.active {
         transform: translateX(0) !important;
+    }
+}
+
+/* =========================================================
+   LUXURY FOOTER
+   ========================================================= */
+.luxury-footer {
+    background-color: #fff;
+    color: black;
+    padding: 100px 50px 30px;
+    position: relative;
+    z-index: 10;
+    border-top: 1px solid #1a1a1a;
+}
+
+.footer-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 80px;
+}
+
+.footer-brand {
+    max-width: 320px;
+}
+
+.footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 300;
+    letter-spacing: 6px;
+    margin-bottom: 5px;
+}
+
+.footer-est {
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: #777;
+    margin-bottom: 25px;
+}
+
+.footer-desc {
+    font-size: 13px;
+    line-height: 1.8;
+    color: #999;
+    font-weight: 300;
+}
+
+.footer-title {
+    font-family: 'Lato', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 25px;
+    font-weight: 400;
+}
+
+.footer-links ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.footer-links a {
+    color: #888;
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 1px;
+    transition: color 0.4s ease;
+    position: relative;
+    display: inline-block;
+}
+
+.footer-links a::after {
+    content: ''; 
+    position: absolute; 
+    bottom: -3px; 
+    left: 0;
+    width: 100%; 
+    height: 1px; 
+    background-color: #ffffff; 
+    transform: scaleX(0); 
+    transform-origin: left; 
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+
+
+.footer-links a:hover::after {
+    transform: scaleX(1);
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 30px;
+    border-top: 1px solid #1a1a1a;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    color: #666;
+    text-transform: uppercase;
+}
+
+.footer-legal {
+    display: flex;
+    gap: 30px;
+}
+
+.footer-legal a {
+    color: #666;
+    text-decoration: none;
+    transition: color 0.4s ease;
+}
+
+.footer-legal a:hover {
+    color: #ccc;
+}
+
+/* --- Mobile Optimization for Footer --- */
+@media (max-width: 768px) {
+    .luxury-footer {
+        padding: max(60px, env(safe-area-inset-top)) max(25px, env(safe-area-inset-right)) max(30px, env(safe-area-inset-bottom)) max(25px, env(safe-area-inset-left));
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+        margin-bottom: 60px;
+    }
+
+    .footer-brand {
+        max-width: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .footer-logo {
+        font-size: 28px;
+        letter-spacing: 5px;
+    }
+
+    .footer-desc {
+        max-width: 280px;
+        margin: 0 auto;
+    }
+
+    .footer-links {
+        text-align: center;
+    }
+
+    .footer-title {
+        margin-bottom: 20px;
+    }
+    
+    .footer-links a::after {
+        transform-origin: center; /* Centers the hover scale animation on mobile */
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+        padding-bottom: max(20px, env(safe-area-inset-bottom));
+    }
+
+    .footer-legal {
+        justify-content: center;
+        width: 100%;
     }
 }
