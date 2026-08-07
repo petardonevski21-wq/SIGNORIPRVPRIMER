@@ -69,4 +69,35 @@ document.addEventListener("DOMContentLoaded", () => {
     if (menuToggleBtn) menuToggleBtn.addEventListener('click', openMenuSequence);
     if (closeBtn) closeBtn.addEventListener('click', closeMenuSequence);
     if (navOverlay) navOverlay.addEventListener('click', closeMenuSequence);
+
+
+    // ==========================================
+    // Скрол Нагоре (Scroll-up) Анимација за Менито
+    // ==========================================
+    const header = document.querySelector('.header');
+    let lastScrollY = window.scrollY;
+
+    window.addEventListener('scroll', () => {
+        const currentScrollY = window.scrollY;
+        
+        // Почнуваме со логиката откако корисникот ќе скролне 350px надолу
+        // (за да го одминеме оригиналното мени и да не се поклопат)
+        if (currentScrollY > 350) {
+            header.classList.add('ready-sticky'); // Го спрема менито со бела позадина скриено нагоре
+            
+            if (currentScrollY < lastScrollY) {
+                // Корисникот скрола НАГОРЕ -> пушти ја анимацијата надолу
+                header.classList.add('show-sticky');
+            } else {
+                // Корисникот скрола НАДОЛУ -> скриј го менито повторно
+                header.classList.remove('show-sticky');
+            }
+        } else {
+            // Кога корисникот ќе се врати скроз горе, се ресетираме на првобитното мени
+            header.classList.remove('ready-sticky');
+            header.classList.remove('show-sticky');
+        }
+        
+        lastScrollY = currentScrollY;
+    });
 });
