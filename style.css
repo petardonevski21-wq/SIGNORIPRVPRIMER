@@ -108,6 +108,17 @@ body {
                 stroke-width 700ms ease;
 }
 
+/* ФИКС ЗА МОБИЛЕН: Експлицитни почетни патеки за WebKit да не ги губи линиите */
+.menu-svg .line.top {
+    d: path("M 15 30 C 18 30, 21 30, 24 30 C 27 30, 30 30, 33 30 C 36 30, 39 30, 42 30 C 45 30, 48 30, 50 30 C 52 30, 55 30, 58 30 C 61 30, 64 30, 67 30 C 70 30, 73 30, 76 30 C 79 30, 82 30, 85 30 Z");
+}
+.menu-svg .line.mid {
+    d: path("M 15 50 C 38 50, 62 50, 85 50");
+}
+.menu-svg .line.bot {
+    d: path("M 15 70 C 19 70, 23 70, 27 70 C 31 70, 35 70, 39 70 C 43 70, 47 70, 50 70 C 53 70, 57 70, 61 70 C 65 70, 69 70, 73 70 C 77 70, 81 70, 85 70 Z");
+}
+
 .menu-icon-wrapper.morph-active .top {
     fill: #ffffff;
     stroke-width: 1;
@@ -376,6 +387,11 @@ body {
 
     .content h2 {
         font-size: 30px !important;
+    }
+
+    /* Ја отстрануваме темната позадина од сликите за мобилни уреди */
+    .overlay {
+        background: transparent !important;
     }
 
     .nav-drawer {

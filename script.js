@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const messages = [
         "Book Your Private Consultation",
         "Experience True Bespoke Elegance",
-        "Crafted Exclusively For Your Silhouette"
+        "THE ART OF BESPOKE"
     ];
 
     const textElement = document.getElementById("rotating-text");
