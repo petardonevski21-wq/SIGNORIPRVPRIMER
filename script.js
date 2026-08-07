@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 5000);
 
     // ==========================================
-    // LUXURY TIMING FOR THE MORPH INTERACTION
+    // LUXURY TIMING FOR THE MORPH INTERACTION (LEFT MENU)
     // ==========================================
     const menuToggleBtn = document.getElementById('menuToggleBtn');
     const navDrawer = document.getElementById('navDrawer');
@@ -72,32 +72,78 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     // ==========================================
-    // Скрол Нагоре (Scroll-up) Анимација за Менито
+    // LUXURY SEARCH DRAWER INTERACTION (RIGHT MENU)
+    // ==========================================
+    const searchToggleBtn = document.getElementById('searchToggleBtn');
+    const searchDrawer = document.getElementById('searchDrawer');
+    const searchOverlay = document.getElementById('searchDrawerOverlay');
+    const closeSearchBtn = document.getElementById('closeSearchBtn');
+
+    let isSearchAnimating = false;
+
+    function openSearchSequence() {
+        if (isSearchAnimating) return;
+        isSearchAnimating = true;
+
+        searchOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden'; 
+        
+        setTimeout(() => {
+            searchDrawer.classList.add('active');
+            
+            setTimeout(() => {
+                isSearchAnimating = false;
+            }, 1000); 
+        }, 100); 
+    }
+
+    function closeSearchSequence() {
+        if (isSearchAnimating) return;
+        isSearchAnimating = true;
+
+        searchDrawer.classList.remove('active');
+        document.body.style.overflow = '';
+
+        setTimeout(() => {
+            searchOverlay.classList.remove('active');
+            
+            setTimeout(() => {
+                isSearchAnimating = false;
+            }, 600);
+        }, 800); 
+    }
+
+    if (searchToggleBtn) searchToggleBtn.addEventListener('click', openSearchSequence);
+    if (closeSearchBtn) closeSearchBtn.addEventListener('click', closeSearchSequence);
+    if (searchOverlay) searchOverlay.addEventListener('click', closeSearchSequence);
+
+
+    // ==========================================
+    // МАЗНА АНИМАЦИЈА - ЛИЗГАЊЕ ОД ГОРЕ
     // ==========================================
     const header = document.querySelector('.header');
-    let lastScrollY = window.scrollY;
+    let ticking = false;
 
     window.addEventListener('scroll', () => {
-        const currentScrollY = window.scrollY;
-        
-        // Почнуваме со логиката откако корисникот ќе скролне 350px надолу
-        // (за да го одминеме оригиналното мени и да не се поклопат)
-        if (currentScrollY > 350) {
-            header.classList.add('ready-sticky'); // Го спрема менито со бела позадина скриено нагоре
-            
-            if (currentScrollY < lastScrollY) {
-                // Корисникот скрола НАГОРЕ -> пушти ја анимацијата надолу
-                header.classList.add('show-sticky');
-            } else {
-                // Корисникот скрола НАДОЛУ -> скриј го менито повторно
-                header.classList.remove('show-sticky');
-            }
-        } else {
-            // Кога корисникот ќе се врати скроз горе, се ресетираме на првобитното мени
-            header.classList.remove('ready-sticky');
-            header.classList.remove('show-sticky');
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                const currentScrollY = window.scrollY;
+                
+                if (currentScrollY > 10) {
+                    header.classList.add('ready-sticky');
+                } else {
+                    header.classList.remove('ready-sticky');
+                }
+                
+                if (currentScrollY > 40) {
+                    header.classList.add('show-sticky');
+                } else {
+                    header.classList.remove('show-sticky');
+                }
+                
+                ticking = false;
+            });
+            ticking = true;
         }
-        
-        lastScrollY = currentScrollY;
-    });
+    }, { passive: true });
 });

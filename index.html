@@ -14,8 +14,9 @@
 </head>
 <body>
 
-    <!-- Cinematic Blur Overlay -->
+    <!-- Cinematic Blur Overlays -->
     <div class="nav-drawer-overlay" id="navDrawerOverlay"></div>
+    <div class="nav-drawer-overlay" id="searchDrawerOverlay"></div>
 
     <!-- MINIMALIST FLOATING NAVIGATION -->
     <nav class="nav-drawer" id="navDrawer">
@@ -119,6 +120,57 @@
         </div>
     </nav>
 
+    <!-- LUXURY SEARCH DRAWER -->
+    <div class="search-drawer" id="searchDrawer">
+        <!-- Header -->
+        <div class="drawer-header" style="justify-content: flex-end;">
+            <div class="close-btn" id="closeSearchBtn">
+                <span class="close-text">Close</span>
+                <span class="close-x">&#10005;</span>
+            </div>
+            <img src="./sliki/favicon.png" alt="SIGNORI Logo" class="drawer-top-logo">
+        </div>
+
+        <!-- Search Content -->
+        <div class="search-content-area">
+            <h3 class="search-title">Discover</h3>
+            <div class="search-input-wrapper">
+                <input type="text" class="luxury-search-input" placeholder="Search the collection...">
+                <button class="search-submit-btn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="M21 21l-4.35-4.35"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="search-suggestions">
+                <p>Popular Suggestions</p>
+                <a href="#">
+                    <span class="drawer-text">Bespoke Suits</span>
+                    <svg class="drawer-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M9 18l6-6-6-6"></path></svg>
+                </a>
+                <a href="#">
+                    <span class="drawer-text">Wedding Collection</span>
+                    <svg class="drawer-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M9 18l6-6-6-6"></path></svg>
+                </a>
+                <a href="#">
+                    <span class="drawer-text">Leather Goods</span>
+                    <svg class="drawer-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M9 18l6-6-6-6"></path></svg>
+                </a>
+                <a href="#">
+                    <span class="drawer-text">Private Appointments</span>
+                    <svg class="drawer-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M9 18l6-6-6-6"></path></svg>
+                </a>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="drawer-footer">
+            <div class="drawer-brand-logo">SIGNORI</div>
+            <div class="drawer-est">EST 2014</div>
+        </div>
+    </div>
+
     <!-- Top Notification Bar -->
     <div class="top-bar">
         <div class="top-bar-empty"></div>
@@ -143,7 +195,7 @@
             <p>EST 2014</p>
         </div>
 
-        <div class="search-icon">
+        <div class="search-icon" id="searchToggleBtn">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                 <circle cx="11" cy="11" r="8"></circle>
                 <path d="M21 21l-4.35-4.35"></path>
