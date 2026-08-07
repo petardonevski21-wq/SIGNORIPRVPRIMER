@@ -108,7 +108,7 @@ body {
                 stroke-width 700ms ease;
 }
 
-/* ФИКС ЗА МОБИЛЕН: Експлицитни почетни патеки за WebKit да не ги губи линиите */
+/* Експлицитни почетни патеки за трите линии */
 .menu-svg .line.top {
     d: path("M 15 30 C 18 30, 21 30, 24 30 C 27 30, 30 30, 33 30 C 36 30, 39 30, 42 30 C 45 30, 48 30, 50 30 C 52 30, 55 30, 58 30 C 61 30, 64 30, 67 30 C 70 30, 73 30, 76 30 C 79 30, 82 30, 85 30 Z");
 }
@@ -334,6 +334,29 @@ body {
    ========================================================= */
 @media (max-width: 768px) {
     
+    /* БЕЗ АНИМАЦИЈА НА БУРГЕР ИКОНАТА НА МОБИЛЕН - ОСТАНУВААТ САМО ТРИТЕ ЛИНИИ */
+    .menu-svg .line {
+        transition: none !important;
+    }
+
+    .menu-icon-wrapper.morph-active .top {
+        fill: transparent !important;
+        stroke-width: 4 !important;
+        d: path("M 15 30 C 18 30, 21 30, 24 30 C 27 30, 30 30, 33 30 C 36 30, 39 30, 42 30 C 45 30, 48 30, 50 30 C 52 30, 55 30, 58 30 C 61 30, 64 30, 67 30 C 70 30, 73 30, 76 30 C 79 30, 82 30, 85 30 Z") !important;
+    }
+
+    .menu-icon-wrapper.morph-active .mid {
+        fill: transparent !important;
+        stroke-width: 4 !important;
+        d: path("M 15 50 C 38 50, 62 50, 85 50") !important;
+    }
+
+    .menu-icon-wrapper.morph-active .bot {
+        fill: transparent !important;
+        stroke-width: 4 !important;
+        d: path("M 15 70 C 19 70, 23 70, 27 70 C 31 70, 35 70, 39 70 C 43 70, 47 70, 50 70 C 53 70, 57 70, 61 70 C 65 70, 69 70, 73 70 C 77 70, 81 70, 85 70 Z") !important;
+    }
+
     .top-bar {
         display: flex !important;
         padding: 8px 10px !important;
@@ -389,7 +412,6 @@ body {
         font-size: 30px !important;
     }
 
-    /* Ја отстрануваме темната позадина од сликите за мобилни уреди */
     .overlay {
         background: transparent !important;
     }
@@ -504,8 +526,6 @@ body {
     transform-origin: left; 
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
-
-
 
 .footer-links a:hover::after {
     transform: scaleX(1);
