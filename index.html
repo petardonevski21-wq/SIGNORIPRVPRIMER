@@ -120,54 +120,112 @@
         </div>
     </nav>
 
-    <!-- LUXURY SEARCH DRAWER -->
+    <!-- LUXURY TOP SEARCH DRAWER (LOUIS VUITTON STYLE) -->
     <div class="search-drawer" id="searchDrawer">
         <!-- Header -->
-        <div class="drawer-header" style="justify-content: flex-end;">
+        <div class="search-drawer-header">
+            <div class="search-drawer-logo">
+                <img src="./sliki/favicon.png" alt="SIGNORI Logo" class="drawer-top-logo">
+                <span class="search-logo-text">SIGNORI</span>
+            </div>
             <div class="close-btn" id="closeSearchBtn">
                 <span class="close-text">Close</span>
                 <span class="close-x">&#10005;</span>
             </div>
-            <img src="./sliki/favicon.png" alt="SIGNORI Logo" class="drawer-top-logo">
         </div>
 
         <!-- Search Content -->
         <div class="search-content-area">
-            <h3 class="search-title">Discover</h3>
-            <div class="search-input-wrapper">
-                <input type="text" class="luxury-search-input" placeholder="Search the collection...">
-                <button class="search-submit-btn">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <circle cx="11" cy="11" r="8"></circle>
-                        <path d="M21 21l-4.35-4.35"></path>
-                    </svg>
-                </button>
-            </div>
-            <div class="search-suggestions">
-                <p>Popular Suggestions</p>
-                <a href="#">
-                    <span class="drawer-text">Bespoke Suits</span>
-                    <svg class="drawer-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M9 18l6-6-6-6"></path></svg>
-                </a>
-                <a href="#">
-                    <span class="drawer-text">Wedding Collection</span>
-                    <svg class="drawer-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M9 18l6-6-6-6"></path></svg>
-                </a>
-                <a href="#">
-                    <span class="drawer-text">Leather Goods</span>
-                    <svg class="drawer-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M9 18l6-6-6-6"></path></svg>
-                </a>
-                <a href="#">
-                    <span class="drawer-text">Private Appointments</span>
-                    <svg class="drawer-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M9 18l6-6-6-6"></path></svg>
-                </a>
-            </div>
-        </div>
+            <!-- Main Title Above Search -->
+            <h3 class="search-main-heading">Explore The House of Signori</h3>
 
-        <!-- Footer -->
-        <div class="drawer-footer">
-            <div class="drawer-brand-logo">SIGNORI</div>
-            <div class="drawer-est">EST 2014</div>
+            <!-- Oval Pill Search Input -->
+            <div class="search-input-pill">
+                <svg class="search-input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="M21 21l-4.35-4.35"></path>
+                </svg>
+                <input type="text" class="luxury-search-input" placeholder="Search for Bespoke Suits, Tuxedos, Accessories...">
+            </div>
+
+            <!-- Trending Searches Tags -->
+            <div class="search-trending">
+                <span class="trending-title">TRENDING SEARCHES</span>
+                <div class="trending-tags">
+                    <a href="#">Bespoke Suits</a>
+                    <a href="#">Tuxedos</a>
+                    <a href="#">Made to Measure</a>
+                    <a href="#">Leather Goods</a>
+                    <a href="#">Silk Ties</a>
+                    <a href="#">Private Appointments</a>
+                </div>
+            </div>
+
+            <!-- Featured Product Showcase -->
+            <div class="search-showcase">
+                <h4 class="showcase-title">Iconic Tailoring & Collections</h4>
+                <div class="showcase-grid">
+                    <!-- Row 1 -->
+                    <div class="showcase-card">
+                        <div class="showcase-img" style="background-image: url('./sliki/besp.png');"></div>
+                        <div class="showcase-info">
+                            <h5>Navy Double-Breasted Suit</h5>
+                            <p>Bespoke Collection</p>
+                        </div>
+                    </div>
+                    <div class="showcase-card">
+                        <div class="showcase-img" style="background-image: url('./sliki/online.jpg');"></div>
+                        <div class="showcase-info">
+                            <h5>Charcoal Wool Blazer</h5>
+                            <p>Ready to Wear</p>
+                        </div>
+                    </div>
+                    <div class="showcase-card">
+                        <div class="showcase-img" style="background-image: url('./sliki/meni1.jpg');"></div>
+                        <div class="showcase-info">
+                            <h5>Black Tie Tuxedo</h5>
+                            <p>Evening Wear</p>
+                        </div>
+                    </div>
+                    <div class="showcase-card">
+                        <div class="showcase-img" style="background-image: url('./sliki/menii2.jpg');"></div>
+                        <div class="showcase-info">
+                            <h5>Handcrafted Leather Shoes</h5>
+                            <p>Leather Goods</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 2 -->
+                    <div class="showcase-card">
+                        <div class="showcase-img" style="background-image: url('./sliki/besp.png');"></div>
+                        <div class="showcase-info">
+                            <h5>Pure Silk Jacquard Tie</h5>
+                            <p>Accessories</p>
+                        </div>
+                    </div>
+                    <div class="showcase-card">
+                        <div class="showcase-img" style="background-image: url('./sliki/online.jpg');"></div>
+                        <div class="showcase-info">
+                            <h5>Cashmere Overcoat</h5>
+                            <p>Outerwear</p>
+                        </div>
+                    </div>
+                    <div class="showcase-card">
+                        <div class="showcase-img" style="background-image: url('./sliki/meni1.jpg');"></div>
+                        <div class="showcase-info">
+                            <h5>Custom Tailored Shirt</h5>
+                            <p>Made to Measure</p>
+                        </div>
+                    </div>
+                    <div class="showcase-card">
+                        <div class="showcase-img" style="background-image: url('./sliki/menii2.jpg');"></div>
+                        <div class="showcase-info">
+                            <h5>Private Fitting Appointment</h5>
+                            <p>Bespoke Experience</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 

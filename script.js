@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     // ==========================================
-    // LUXURY SEARCH DRAWER INTERACTION (RIGHT MENU)
+    // LUXURY SEARCH TOP OVERLAY INTERACTION (SLOWER TIMING)
     // ==========================================
     const searchToggleBtn = document.getElementById('searchToggleBtn');
     const searchDrawer = document.getElementById('searchDrawer');
@@ -104,50 +104,30 @@ document.addEventListener("DOMContentLoaded", () => {
         if (isSearchAnimating) return;
         isSearchAnimating = true;
 
-        const isMobile = window.innerWidth <= 768;
-
         searchOverlay.classList.add('active');
         document.body.style.overflow = 'hidden'; 
-        
-        if (isMobile) {
+
+        setTimeout(() => {
             searchDrawer.classList.add('active');
             setTimeout(() => {
                 isSearchAnimating = false;
-            }, 400);
-        } else {
-            setTimeout(() => {
-                searchDrawer.classList.add('active');
-                
-                setTimeout(() => {
-                    isSearchAnimating = false;
-                }, 1000); 
-            }, 100); 
-        }
+            }, 1400); // Прилагодено според новата поспора CSS анимација (1.4s)
+        }, 50);
     }
 
     function closeSearchSequence() {
         if (isSearchAnimating) return;
         isSearchAnimating = true;
 
-        const isMobile = window.innerWidth <= 768;
-
         searchDrawer.classList.remove('active');
         document.body.style.overflow = '';
 
-        if (isMobile) {
+        setTimeout(() => {
             searchOverlay.classList.remove('active');
             setTimeout(() => {
                 isSearchAnimating = false;
-            }, 400);
-        } else {
-            setTimeout(() => {
-                searchOverlay.classList.remove('active');
-                
-                setTimeout(() => {
-                    isSearchAnimating = false;
-                }, 600);
-            }, 800); 
-        }
+            }, 800);
+        }, 700);
     }
 
     if (searchToggleBtn) searchToggleBtn.addEventListener('click', openSearchSequence);
