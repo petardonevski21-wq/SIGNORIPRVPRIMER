@@ -36,34 +36,53 @@ document.addEventListener("DOMContentLoaded", () => {
         if (isMenuAnimating) return;
         isMenuAnimating = true;
 
+        const isMobile = window.innerWidth <= 768;
         menuToggleBtn.classList.add('morph-active');
 
-        setTimeout(() => {
+        if (isMobile) {
             navDrawer.classList.add('active');
             navOverlay.classList.add('active');
-            document.body.style.overflow = 'hidden'; 
-            
+            document.body.style.overflow = 'hidden';
             setTimeout(() => {
                 isMenuAnimating = false;
-            }, 1000); 
-        }, 750); 
+            }, 400);
+        } else {
+            setTimeout(() => {
+                navDrawer.classList.add('active');
+                navOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden'; 
+                
+                setTimeout(() => {
+                    isMenuAnimating = false;
+                }, 1000); 
+            }, 750); 
+        }
     }
 
     function closeMenuSequence() {
         if (isMenuAnimating) return;
         isMenuAnimating = true;
 
+        const isMobile = window.innerWidth <= 768;
+
         navDrawer.classList.remove('active');
         navOverlay.classList.remove('active');
         document.body.style.overflow = '';
 
-        setTimeout(() => {
+        if (isMobile) {
             menuToggleBtn.classList.remove('morph-active');
-            
             setTimeout(() => {
                 isMenuAnimating = false;
-            }, 600);
-        }, 800); 
+            }, 400);
+        } else {
+            setTimeout(() => {
+                menuToggleBtn.classList.remove('morph-active');
+                
+                setTimeout(() => {
+                    isMenuAnimating = false;
+                }, 600);
+            }, 800); 
+        }
     }
 
     if (menuToggleBtn) menuToggleBtn.addEventListener('click', openMenuSequence);
@@ -85,32 +104,50 @@ document.addEventListener("DOMContentLoaded", () => {
         if (isSearchAnimating) return;
         isSearchAnimating = true;
 
+        const isMobile = window.innerWidth <= 768;
+
         searchOverlay.classList.add('active');
         document.body.style.overflow = 'hidden'; 
         
-        setTimeout(() => {
+        if (isMobile) {
             searchDrawer.classList.add('active');
-            
             setTimeout(() => {
                 isSearchAnimating = false;
-            }, 1000); 
-        }, 100); 
+            }, 400);
+        } else {
+            setTimeout(() => {
+                searchDrawer.classList.add('active');
+                
+                setTimeout(() => {
+                    isSearchAnimating = false;
+                }, 1000); 
+            }, 100); 
+        }
     }
 
     function closeSearchSequence() {
         if (isSearchAnimating) return;
         isSearchAnimating = true;
 
+        const isMobile = window.innerWidth <= 768;
+
         searchDrawer.classList.remove('active');
         document.body.style.overflow = '';
 
-        setTimeout(() => {
+        if (isMobile) {
             searchOverlay.classList.remove('active');
-            
             setTimeout(() => {
                 isSearchAnimating = false;
-            }, 600);
-        }, 800); 
+            }, 400);
+        } else {
+            setTimeout(() => {
+                searchOverlay.classList.remove('active');
+                
+                setTimeout(() => {
+                    isSearchAnimating = false;
+                }, 600);
+            }, 800); 
+        }
     }
 
     if (searchToggleBtn) searchToggleBtn.addEventListener('click', openSearchSequence);

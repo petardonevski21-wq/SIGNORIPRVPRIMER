@@ -556,6 +556,7 @@ body {
         padding: 25px !important; 
         
         transform: translateX(calc(-100% - 35px)) !important;
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
     }
 
     .nav-drawer.active {
@@ -570,6 +571,7 @@ body {
         width: auto !important; max-width: none !important; height: auto !important;
         border-radius: 12px !important; padding: 25px !important; 
         transform: translateX(calc(100% + 35px)) !important;
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
     }
     .search-drawer.active { transform: translateX(0) !important; }
 }
