@@ -607,7 +607,7 @@ body {
 }
 
 /* =========================================================
-   MOBILE OPTIMIZATION
+   MOBILE OPTIMIZATION (ORIGINAL VERSION)
    ========================================================= */
 @media (max-width: 768px) {
     
@@ -718,9 +718,7 @@ body {
         transform: translateX(0) !important;
     }
 
-    /* =========================================================
-       MOBILE SEARCH UX - LUXURY EDITORIAL OVERHAUL
-       ========================================================= */
+    /* Mobile Search Original Layout */
     .search-drawer {
         top: 0 !important;
         left: 0 !important;
@@ -728,149 +726,49 @@ body {
         width: 100% !important;
         height: 100dvh !important;
         max-height: 100dvh !important;
-        padding: max(20px, env(safe-area-inset-top)) 24px max(30px, env(safe-area-inset-bottom)) !important;
+        padding: max(20px, env(safe-area-inset-top)) 20px max(30px, env(safe-area-inset-bottom)) !important;
         border-radius: 0 !important;
-        background-color: #ffffff !important;
     }
 
     .search-drawer.active {
         transform: translateY(0) !important;
     }
 
-    .search-drawer-header {
-        margin-bottom: 30px !important;
-        padding-top: 10px !important;
-    }
-
     .search-main-heading {
-        font-size: 24px !important;
-        letter-spacing: 2px !important;
-        text-align: left !important;
-        width: 100% !important;
-        margin-bottom: 20px !important;
-        line-height: 1.3 !important;
+        font-size: 22px !important;
+        letter-spacing: 3px !important;
     }
 
     .search-input-pill {
-        padding: 16px 24px !important;
-        border: 1px solid #e5e5e5 !important;
-        border-radius: 4px !important; /* Editorial square look instead of pill на мобилен */
-        box-shadow: none !important;
-        margin-bottom: 15px !important;
-        background-color: #fafafa !important;
-        transition: all 0.3s ease !important;
-    }
-
-    .search-input-pill:focus-within {
-        border-color: #111111 !important;
-        background-color: #ffffff !important;
+        padding: 12px 20px !important;
+        max-width: 100% !important;
     }
 
     .luxury-search-input {
-        font-size: 16px !important; /* Спречува автоматско зумирање на iOS */
-        color: #111 !important;
+        font-size: 15px !important;
     }
 
     .search-trending {
         flex-direction: column !important;
-        align-items: flex-start !important;
-        gap: 16px !important;
-        width: 100% !important;
-        margin-bottom: 10px !important;
-    }
-
-    .trending-title {
-        font-size: 10px !important;
-        letter-spacing: 3px !important;
-        color: #999 !important;
-    }
-
-    /* Mobile: Chips layout for tags (Horizontal scroll) */
-    .trending-tags {
-        display: flex !important;
-        flex-wrap: nowrap !important;
-        overflow-x: auto !important;
-        width: calc(100% + 48px) !important;
-        margin-left: -24px !important;
-        padding: 0 24px 15px 24px !important;
         gap: 12px !important;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
     }
-    .trending-tags::-webkit-scrollbar {
-        display: none;
+
+    .trending-tags {
+        justify-content: center !important;
+        gap: 12px !important;
     }
 
     .trending-tags a {
-        padding: 10px 22px !important;
-        border: none !important;
-        border-radius: 2px !important; /* Остри bespoke агли */
-        white-space: nowrap !important;
         font-size: 12px !important;
-        background: #f4f4f4 !important;
-        color: #333 !important;
-        letter-spacing: 1px !important;
-    }
-    
-    .trending-tags a::after {
-        display: none !important; /* Ја трга линијата одоздола што ја има на десктоп */
     }
 
-    .search-showcase {
-        margin-top: 15px !important;
-        padding-top: 30px !important;
-        border-top: 1px solid #f0f0f0 !important;
-        width: 100% !important;
-        overflow: hidden !important;
-    }
-
-    .showcase-title {
-        font-size: 13px !important;
-        letter-spacing: 3px !important;
-        text-transform: uppercase !important;
-        color: #777 !important;
-        margin-bottom: 20px !important;
-    }
-
-    /* Mobile: Swipeable Carousel for Products */
     .showcase-grid {
-        display: flex !important;
-        flex-wrap: nowrap !important;
-        overflow-x: auto !important;
-        gap: 16px !important;
-        width: calc(100% + 48px) !important;
-        margin-left: -24px !important;
-        padding: 0 24px 30px 24px !important;
-        scroll-snap-type: x mandatory;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-    }
-    
-    .showcase-grid::-webkit-scrollbar {
-        display: none;
-    }
-
-    .showcase-card {
-        flex: 0 0 80% !important; /* Покажува 20% од следната слика за корисникот да знае дека треба да лизга */
-        scroll-snap-align: center !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 20px 10px !important;
     }
 
     .showcase-img {
-        height: 340px !important; /* Повисок, editorial приказ на костумите */
-        border-radius: 0 !important; /* Остри bespoke агли */
-        margin-bottom: 16px !important;
-        background-color: #f7f7f7 !important;
-    }
-
-    .showcase-info h5 {
-        font-size: 15px !important;
-        letter-spacing: 0.5px !important;
-        margin-bottom: 6px !important;
-    }
-    
-    .showcase-info p {
-        font-size: 10px !important;
-        letter-spacing: 1.5px !important;
+        height: 180px !important;
     }
 }
 
